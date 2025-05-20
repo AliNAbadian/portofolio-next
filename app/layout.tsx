@@ -1,15 +1,34 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Share_Tech, Barlow, Concert_One, Poppins } from "next/font/google";
 import "./globals.css";
+import ParticleComponent from "@/components/UI/ParticleWrapper";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const shareTech = Share_Tech({
+  variable: "--font-share-tech",
   subsets: ["latin"],
+  display: "swap",
+  weight: "400",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  display: "swap",
+  weight: "400",
+});
+
+const barlow = Barlow({
+  variable: "--font-barlow",
+  subsets: ["latin"],
+  display: "swap",
+  weight: "400",
+});
+
+const concertOne = Concert_One({
+  variable: "--font-concert-one",
+  subsets: ["latin"],
+  display: "swap",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -25,8 +44,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${shareTech.variable} ${barlow.variable} ${concertOne.variable} ${poppins.variable} antialiased`}
       >
+        <ParticleComponent />
         {children}
       </body>
     </html>
