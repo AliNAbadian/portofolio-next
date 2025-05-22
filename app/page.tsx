@@ -17,7 +17,7 @@ const page = () => {
             Front-end Developer Next.js | React.js | Rust
           </p>
           <GlowButton text="Click it" size="medium" />
-          <div className="absolute top-0 left-0 w-fit h-full -z-10">
+          <div className="absolute top-0 left-0 w-fit h-full -z-10 bg-transparent text-transparent">
             <LottieLoader />
           </div>
         </div>

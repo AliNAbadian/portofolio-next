@@ -9,7 +9,7 @@ const LottieLoader = () => {
       loop
       autoplay
       backgroundColor="transparent"
-      src="https://lottie.host/cd3a97ac-50d6-48b3-b08d-1cb793f76b6b/MAJcuDVdOH.lottie"
+      src="https://lottie.host/33db9e30-21a4-4f26-bee5-f8fa42f46d7e/Orn1XqNjOj.lottie"
     />
   );
 };
