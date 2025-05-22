@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${shareTech.variable} ${barlow.variable} ${concertOne.variable} ${poppins.variable} antialiased`}
+        className={`${shareTech.variable} ${barlow.variable} ${concertOne.variable} ${poppins.variable} antialiased container  mx-auto`}
       >
         <ParticleComponent />
         {children}
