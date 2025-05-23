@@ -3,6 +3,7 @@ import React from "react";
 import MenuButton from "../UI/Buttons/MenuButton";
 import StyledButton from "../UI/Buttons/StyledButton";
 import { text } from "stream/consumers";
+import Image from "next/image";
 
 const menuItems = [
   {
@@ -29,8 +30,11 @@ const menuItems = [
 
 const Navbar = () => {
   return (
-    <div className="flex flex-row items-center px-4 justify-start gap-x-4 bg-stone-50/5 z-50 backdrop-blur-md   inset-0 h-16 rounded-3xl fixed top-2 left-[15%] right-[15%]">
+    <div className="flex border border-stone-50/10 flex-row items-center px-4 justify-start gap-x-4 bg-stone-50/5 z-50 backdrop-blur-md   inset-0 h-16 rounded-3xl fixed top-2 left-[15%] right-[15%]">
       {/* <MenuButton /> */}
+      <div className="relative w-12 h-12 rounded-full overflow-hidden shadow-lg shadow-amber-50/10">
+        <Image src={"/favicon.png"} alt="" fill />
+      </div>
       <div className="flex flex-row items-center justify-start gap-x-4 w-full">
         {menuItems.map((item) => (
           <StyledButton
