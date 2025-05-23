@@ -22,8 +22,9 @@ const page = () => {
               {/* <GlowButton text="Click it" size="medium" /> */}
               <Suspense>
                 <PixelButton
-                  text="Contact Me"
+                  text="View My Work"
                   size="medium"
+                  href="https://github.com/AliNAbadian"
                   // onClick={() => alert("Button clicked!")}
                 />
               </Suspense>
@@ -35,7 +36,10 @@ const page = () => {
         </div>
         {/* <div className="min-h-[100vh]"></div> */}
       </div>
-      <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-b from-[#0f172a] to-[#1e293b]"></div>
+      <div className="flex flex-col items-start justify-start w-full max-w-2xl p-6 bg-transparent backdrop-blur-sm backdrop-opacity-50 bg-clip-border rounded-lg font-tech">
+        <h2 className="text-4xl text-white">Section Cards</h2>
+        <p className="text-lg text-gray-400">This is a section card example.</p>
+      </div>
     </>
   );
 };

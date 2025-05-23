@@ -1,13 +1,20 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 
 type GlowButtonProps = {
   text: string;
   onClick?: () => void;
   size?: "small" | "medium" | "large";
+  href: string;
 };
 
-const PixelButton = ({ text, onClick, size = "small" }: GlowButtonProps) => {
+const PixelButton = ({
+  text,
+  onClick,
+  size = "small",
+  href,
+}: GlowButtonProps) => {
   const sizeClasses = {
     small: "w-[80px] h-[40px] text-sm",
     medium: "w-[100px] h-[50px] text-base",
@@ -15,9 +22,9 @@ const PixelButton = ({ text, onClick, size = "small" }: GlowButtonProps) => {
   };
 
   return (
-    <button
+    <Link
       className={`group font-barlow cursor-pointer relative bg-[linear-gradient(144deg,_#af40ff,_#5b42f3_50%,_#00ddeb)] text-white whitespace-nowrap flex flex-wrap rounded-lg overflow-hidden ${sizeClasses[size]}`}
-      onClick={onClick}
+      href={href}
     >
       <span className="absolute text-sm left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
         {text}
@@ -94,7 +101,7 @@ const PixelButton = ({ text, onClick, size = "small" }: GlowButtonProps) => {
       <div className="w-[10px] h-[10px] blur-[5px] bg-[rgb(30,41,59)] delay-[0.2s] duration-[0.4s] hover:bg-transparent hover:delay-0 hover:duration-0 group-focus:bg-transparent group-focus:delay-[2.35s]"></div>
       <div className="w-[10px] h-[10px] blur-[5px] bg-[rgb(30,41,59)] delay-[0.2s] duration-[0.4s] hover:bg-transparent hover:delay-0 hover:duration-0 group-focus:bg-transparent group-focus:delay-[0.4s]"></div>
       <div className="w-[10px] h-[10px] blur-[5px] bg-[rgb(30,41,59)] delay-[0.2s] duration-[0.4s] hover:bg-transparent hover:delay-0 hover:duration-0 group-focus:bg-transparent group-focus:delay-[1.35s]"></div>
-    </button>
+    </Link>
   );
 };
 
