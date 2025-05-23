@@ -13,9 +13,9 @@ const HeroTyping = ({}) => {
       className="w-full flex flex-row items-center justify-center font-tech font-bold text-6xl"
       preRenderFirstString={true}
       style={{ textAlign: "center", width: "fit-content" }}
-      speed={10}
+      speed={5}
       repeat={Infinity}
-      sequence={["Professinal", 1000, "Prosufisent", 1000]}
+      sequence={["Professinal", 1000, "Proficient", 1000]}
     />
   );
 };

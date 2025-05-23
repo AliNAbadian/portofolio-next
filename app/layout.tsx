@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Share_Tech, Barlow, Concert_One, Poppins } from "next/font/google";
 import "./globals.css";
 import ParticleComponent from "@/components/UI/ParticleWrapper";
+import Navbar from "@/components/Menus/Navbar";
 
 const shareTech = Share_Tech({
   variable: "--font-share-tech",
@@ -46,6 +47,7 @@ export default function RootLayout({
       <body
         className={`${shareTech.variable} ${barlow.variable} ${concertOne.variable} ${poppins.variable} antialiased container  mx-auto`}
       >
+        <Navbar />
         <ParticleComponent />
         {children}
       </body>

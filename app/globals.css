@@ -7,10 +7,74 @@
   --font-barlow: var(--font-barlow);
   --font-con: var(--font-concert-one);
   --font-pop: var(--font-poppins);
-
+  --color-base: rgb(54, 49, 114);
   --color-primary: #273f4f;
   --color-secondary: #efeeea;
   --color-accent: #fe7743;
 
   --container-lg: 100px;
+}
+@layer base {
+  html {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+  }
+
+  body {
+    font-family: var(--font-barlow);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-con);
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+@layer components {
+  .container {
+    max-width: var(--container-lg);
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-family: var(--font-pop);
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: var(--color-accent);
+  }
+}
+@layer utilities {
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+
+  .text-accent {
+    color: var(--color-accent);
+  }
 }
