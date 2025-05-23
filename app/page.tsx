@@ -18,7 +18,7 @@ const page = () => {
             Front-end Developer Next.js | React.js | Rust
           </p>
           <div className="flex flex-row items-center gap-x-4">
-            <GlowButton text="Click it" size="medium" />
+            {/* <GlowButton text="Click it" size="medium" /> */}
             <Suspense>
               <PixelButton
                 text="Contact Me"
