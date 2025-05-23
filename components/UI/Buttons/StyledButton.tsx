@@ -67,7 +67,9 @@ const StyledButton = ({
   const colorClasses = {
     blue: "text-blue-500 hover:bg-blue-500 hover:text-white",
     red: "text-red-500 hover:bg-red-500 hover:text-white",
-    green: "text-greeover Me500 hover:bg-gray-500 hover:text-white",
+    green: "text-green-500 hover:bg-green-500 hover:text-white",
+    yellow: "text-yellow-500 hover:bg-yellow-500 hover:text-white",
+    gray: "text-gray-500 hover:bg-gray-500 hover:text-white",
   };
 
   const backgroundClasses = {

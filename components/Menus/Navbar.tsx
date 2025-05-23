@@ -4,6 +4,7 @@ import MenuButton from "../UI/Buttons/MenuButton";
 import StyledButton from "../UI/Buttons/StyledButton";
 import { text } from "stream/consumers";
 import Image from "next/image";
+import { useScrollTop } from "@/lib/useScrollTop";
 
 const menuItems = [
   {
@@ -29,8 +30,16 @@ const menuItems = [
 ];
 
 const Navbar = () => {
+  const scrollTop = useScrollTop();
+  const isScrolled = scrollTop > 0;
   return (
-    <div className="flex border border-stone-50/10 flex-row items-center px-4 justify-start gap-x-4 bg-stone-50/5 z-50 backdrop-blur-md   inset-0 h-16 rounded-3xl fixed top-2 left-[15%] right-[15%]">
+    <div
+      className={`flex border  flex-row items-center px-4 justify-start gap-x-4  z-50 backdrop-blur-md   inset-0 h-16 rounded-3xl fixed  transition-all duration-300 ease-in-out ${
+        isScrolled
+          ? "left-[15%] right-[15%] top-2 border-stone-50/10 bg-stone-50/5"
+          : "left-[10%] right-[10%] top-0 bg-transparent border-none"
+      }`}
+    >
       {/* <MenuButton /> */}
       <div className="relative w-12 h-12 rounded-full overflow-hidden shadow-lg shadow-amber-50/10">
         <Image src={"/favicon.png"} alt="" fill />
