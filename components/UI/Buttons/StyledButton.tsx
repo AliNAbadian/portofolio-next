@@ -1,3 +1,5 @@
+"use client";
+
 import { useLenis } from "@/lib/lenis";
 import { Icon } from "@iconify-icon/react";
 import { useRouter } from "next/navigation";

@@ -2,10 +2,33 @@ import GlowButton from "@/components/UI/Buttons/GlowButton";
 import PixelButton from "@/components/UI/Buttons/PixelButton";
 import HeroTyping from "@/components/UI/HeroTyping";
 import LottieLoader from "@/components/UI/LottieLoader";
+import SectionCards from "@/components/UI/SectionCards";
 import { Camera } from "lucide-react";
 import React, { Suspense } from "react";
 
 const page = () => {
+  const menuItems = [
+    {
+      text: "Github",
+      icon: "line-md:github-loop",
+      link: "https://github.com/AliNAbadian",
+    },
+    {
+      text: "Instagram",
+      icon: "line-md:instagram",
+      link: "https://instagram.com/ali_rizabadian",
+    },
+    {
+      text: "Telegram",
+      icon: "line-md:telegram",
+      link: "https://t.me/AliRizAbadian",
+    },
+    {
+      text: "Contact",
+      icon: "line-md:phone",
+      link: "tel:+989146492649",
+    },
+  ];
   return (
     <>
       <div className="relative min-h-screen w-full flex flex-col items-center justify-center ">
@@ -24,7 +47,8 @@ const page = () => {
                 <PixelButton
                   text="View My Work"
                   size="medium"
-                  href="https://github.com/AliNAbadian"
+                  // href="https://github.com/AliNAbadian"
+                  href="#"
                   // onClick={() => alert("Button clicked!")}
                 />
               </Suspense>
@@ -36,10 +60,31 @@ const page = () => {
         </div>
         {/* <div className="min-h-[100vh]"></div> */}
       </div>
-      <div className="flex flex-col items-start justify-start w-full max-w-2xl p-6 bg-transparent backdrop-blur-sm backdrop-opacity-50 bg-clip-border rounded-lg font-tech">
-        <h2 className="text-4xl text-white">Section Cards</h2>
-        <p className="text-lg text-gray-400">This is a section card example.</p>
-      </div>
+      <SectionCards
+        heading="My Story"
+        subHeading="Not an Easy one"
+        buttons={menuItems}
+      >
+        {" "}
+        I am{" "}
+        <span className="bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent transition font-extrabold duration-300 hover:from-yellow-400 hover:to-red-500">
+          Ali
+        </span>
+        , a front-end developer with over four years of experience, blending a
+        strong technical foundation with a forward-thinking approach to web
+        development. I specialize in building scalable and high-performance
+        applications using Next.js, React, and TypeScript, and have hands-on
+        experience with Supabase, Web3, and blockchain technologies. I'm also
+        exploring the world of 3D web apps with Three.js and actively
+        integrating AI features to create more intelligent, responsive user
+        experiences. With a growing proficiency in Rust, I’m expanding my
+        backend capabilities to build efficient and secure systems.
+        Additionally, my background in UI/UX design—ranging from user personas
+        and wireframes to high-fidelity prototypes using Figma and Adobe
+        XD—enables me to craft seamless and engaging interfaces. I’m committed
+        to writing clean, maintainable code and staying at the forefront of
+        modern development practices.
+      </SectionCards>
     </>
   );
 };

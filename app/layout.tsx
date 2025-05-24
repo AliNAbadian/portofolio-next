@@ -43,14 +43,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${shareTech.variable} ${barlow.variable} ${concertOne.variable} ${poppins.variable} antialiased container  mx-auto`}
-      >
-        <Navbar />
-        <ParticleComponent />
-        {children}
-      </body>
-    </html>
+    <>
+      <html lang="en">
+        <body
+          className={`${shareTech.variable} ${barlow.variable} ${concertOne.variable} ${poppins.variable} antialiased container  mx-auto`}
+        >
+          <Navbar />
+          {children}
+        </body>
+      </html>
+      <ParticleComponent />
+    </>
   );
 }
