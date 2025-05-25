@@ -31,9 +31,9 @@ const SkillCard = ({ name, icon, color = "blue" }: SkillCardProps) => {
     gray: "text-gray-500 group-hover:text-white",
   };
 
-  const baseClasses = `${colorClasses[color]} duration-300 ease-in-out transition-all group-hover:scale-110`;
+  const baseClasses = `${colorClasses[color]} `;
   return (
-    <div className="text-3xl flex flex-row items-center justify-start gap-x-4 bg-glassy px-8 py-6 rounded-xl shadow-lg group-hover:shadow-2xl shadow-base ">
+    <div className="text-3xl flex flex-row items-center duration-300 ease-in-out transition-all group-hover:scale-110 justify-start gap-x-4 bg-glassy px-8 py-6 rounded-xl shadow-lg group-hover:shadow-2xl shadow-base ">
       <Icon icon={icon} className={`${baseClasses} text-4xl`} />
       <span className={`${baseClasses} font-tech line-clamp-1`}>{name}</span>
     </div>
