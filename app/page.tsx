@@ -3,6 +3,8 @@ import PixelButton from "@/components/UI/Buttons/PixelButton";
 import HeroTyping from "@/components/UI/HeroTyping";
 import LottieLoader from "@/components/UI/LottieLoader";
 import SectionCards from "@/components/UI/SectionCards";
+import SectionHeader from "@/components/UI/SectionHeader";
+import SkillCard from "@/components/UI/SkillCard";
 import { Camera } from "lucide-react";
 import React, { Suspense } from "react";
 
@@ -60,31 +62,48 @@ const page = () => {
         </div>
         {/* <div className="min-h-[100vh]"></div> */}
       </div>
-      <SectionCards
-        heading="My Story"
-        subHeading="Not an Easy one"
-        buttons={menuItems}
-      >
-        {" "}
-        I am{" "}
-        <span className="bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent transition font-extrabold duration-300 hover:from-yellow-400 hover:to-red-500">
-          Ali
-        </span>
-        , a front-end developer with over four years of experience, blending a
-        strong technical foundation with a forward-thinking approach to web
-        development. I specialize in building scalable and high-performance
-        applications using Next.js, React, and TypeScript, and have hands-on
-        experience with Supabase, Web3, and blockchain technologies. I'm also
-        exploring the world of 3D web apps with Three.js and actively
-        integrating AI features to create more intelligent, responsive user
-        experiences. With a growing proficiency in Rust, I’m expanding my
-        backend capabilities to build efficient and secure systems.
-        Additionally, my background in UI/UX design—ranging from user personas
-        and wireframes to high-fidelity prototypes using Figma and Adobe
-        XD—enables me to craft seamless and engaging interfaces. I’m committed
-        to writing clean, maintainable code and staying at the forefront of
-        modern development practices.
-      </SectionCards>
+      <section className="space-y-10">
+        {/* Summary */}
+        <div>
+          <SectionHeader
+            heading="My Story"
+            subHeading="Not an Easy one"
+            icon="mdi:jet-engine"
+          />
+          <SectionCards buttons={menuItems}>
+            {" "}
+            I am{" "}
+            <span className="bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent transition font-extrabold duration-300 hover:from-yellow-400 hover:to-red-500">
+              Ali
+            </span>
+            , a front-end developer with over four years of experience, blending
+            a strong technical foundation with a forward-thinking approach to
+            web development. I specialize in building scalable and
+            high-performance applications using Next.js, React, and TypeScript,
+            and have hands-on experience with Supabase, Web3, and blockchain
+            technologies. I'm also exploring the world of 3D web apps with
+            Three.js and actively integrating AI features to create more
+            intelligent, responsive user experiences. With a growing proficiency
+            in Rust, I’m expanding my backend capabilities to build efficient
+            and secure systems. Additionally, my background in UI/UX
+            design—ranging from user personas and wireframes to high-fidelity
+            prototypes using Figma and Adobe XD—enables me to craft seamless and
+            engaging interfaces. I’m committed to writing clean, maintainable
+            code and staying at the forefront of modern development practices.
+          </SectionCards>
+        </div>
+        <div>
+          {/* Skills */}
+          <SectionHeader
+            heading="My Skills"
+            subHeading="Small Things I learned Over Years"
+            icon="mdi:jet-engine"
+          />
+          <div className="grid grid-cols-5">
+            <SkillCard icon="cib:react" name="React" color="blue" />
+          </div>
+        </div>
+      </section>
     </>
   );
 };

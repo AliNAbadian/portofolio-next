@@ -78,3 +78,7 @@
     color: var(--color-accent);
   }
 }
+
+.bg-glassy {
+  @apply border backdrop-blur-md  backdrop-opacity-85 border-stone-50/10 bg-stone-50/5;
+}
