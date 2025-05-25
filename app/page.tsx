@@ -5,6 +5,7 @@ import LottieLoader from "@/components/UI/LottieLoader";
 import SectionCards from "@/components/UI/SectionCards";
 import SectionHeader from "@/components/UI/SectionHeader";
 import SkillCard from "@/components/UI/SkillCard";
+import { skills } from "@/lib/data";
 import { Camera } from "lucide-react";
 import React, { Suspense } from "react";
 
@@ -99,8 +100,16 @@ const page = () => {
             subHeading="Small Things I learned Over Years"
             icon="mdi:jet-engine"
           />
-          <div className="grid grid-cols-5">
-            <SkillCard icon="cib:react" name="React" color="blue" />
+          <div className="grid grid-cols-5 gap-4 ">
+            {skills.map((skill) => (
+              <div className="group" key={skill.name}>
+                <SkillCard
+                  name={skill.name}
+                  icon={skill.icon}
+                  color={skill.color}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
