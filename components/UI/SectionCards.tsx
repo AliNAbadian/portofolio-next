@@ -1,6 +1,8 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import StyledButton, { StyledButtonProps } from "./Buttons/StyledButton";
 import Image from "next/image";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 type SectionCardsProps = {
   icon?: string;
@@ -20,8 +22,31 @@ const SectionCards = ({
   description,
   buttons,
 }: SectionCardsProps) => {
+  const ref = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "start center"],
+  });
+
+  console.log(scrollYProgress);
+
+  // Smooth scroll animation
+  const y = useTransform(scrollYProgress, [0, 1], [80, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+  // Optional: Add spring for snapping feel
+  const springY = useSpring(y, { stiffness: 100, damping: 20 });
+  const springOpacity = useSpring(opacity, { stiffness: 100, damping: 20 });
+
   return (
-    <section>
+    <motion.section
+      ref={ref}
+      style={{
+        y: springY,
+        opacity: springOpacity,
+      }}
+    >
       <div className="grid grid-cols-12 place-content-between items-center w-full border  rounded-xl backdrop-blur-md  backdrop-opacity-85 border-stone-50/10 bg-stone-50/5 p-8 ">
         <Image
           alt="avatar ali riz abadian"
@@ -49,7 +74,7 @@ const SectionCards = ({
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
