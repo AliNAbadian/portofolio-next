@@ -3,7 +3,7 @@ import { Share_Tech, Barlow, Concert_One, Poppins } from "next/font/google";
 import "./globals.css";
 import ClientWrapper from "@/shared/lib/ClientWrapper";
 import ParticleComponent from "@/shared/ui/visuals/ParticleWrapper";
-import { Navbar } from "@/features/layout";
+import { Footer, Navbar } from "@/features/layout";
 
 const shareTech = Share_Tech({
   variable: "--font-share-tech",
@@ -52,6 +52,7 @@ export default function RootLayout({
           <ClientWrapper>
             <Navbar />
             {children}
+            <Footer />
           </ClientWrapper>
         </body>
       </html>

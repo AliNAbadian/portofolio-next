@@ -1,10 +1,16 @@
 "use client";
-import ReactLenis, { useLenis } from "lenis/react";
+
+import ReactLenis from "lenis/react";
 import React, { ReactNode } from "react";
+import CustomCursor from "@/shared/ui/visuals/CustomCursor";
 
 const ClientWrapper = ({ children }: { children: ReactNode }) => {
-  //   const lenis = useLenis(({ scroll }) => {});
-  return <ReactLenis root>{children}</ReactLenis>;
+  return (
+    <>
+      <ReactLenis root>{children}</ReactLenis>
+      <CustomCursor />
+    </>
+  );
 };
 
 export default ClientWrapper;
