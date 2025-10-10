@@ -39,8 +39,8 @@ const SectionHeader = ({
         icon={icon}
         // StyledButtonProps
       />
-      <h2 className="text-4xl font-extrabold text-white">{heading}</h2>
-      <p className="text-4xl font-extrabold font-tech bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent transition duration-300 hover:from-yellow-400 hover:to-red-500">
+      <h2 className="text-start text-4xl font-extrabold text-white">{heading}</h2>
+      <p className="text-start text-4xl font-extrabold font-tech bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent transition duration-300 hover:from-yellow-400 hover:to-red-500">
         {subHeading}
       </p>
     </motion.div>

@@ -3,19 +3,19 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 
-// type HeroTypingProps = {
-//   speed: ;
-// };
+type HeroTypingProps = {
+  sequence: (string | number)[];
+};
 
-const HeroTyping = ({}) => {
+const HeroTyping = ({ sequence }: HeroTypingProps) => {
   return (
     <TypeAnimation
-      className="w-full flex flex-row items-center justify-center font-tech font-bold text-6xl"
-      preRenderFirstString={true}
+      className="flex w-full flex-row items-center justify-center font-tech text-6xl font-bold"
+      preRenderFirstString
       style={{ textAlign: "center", width: "fit-content" }}
       speed={5}
       repeat={Infinity}
-      sequence={["Professinal", 1000, "Proficient", 1000]}
+      sequence={sequence}
     />
   );
 };

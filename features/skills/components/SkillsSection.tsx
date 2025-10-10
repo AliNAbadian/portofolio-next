@@ -5,15 +5,22 @@ import SkillCard from "@/shared/ui/cards/SkillCard";
 import { skills } from "@/features/skills/data/skills";
 import React from "react";
 
-const SkillsSection = () => {
+type SkillsSectionProps = {
+  content: {
+    heading: string;
+    subHeading: string;
+  };
+};
+
+const SkillsSection = ({ content }: SkillsSectionProps) => {
   return (
     <section id="skills" className="space-y-6">
       <SectionHeader
-        heading="My Skills"
-        subHeading="Small Things I learned Over Years"
+        heading={content.heading}
+        subHeading={content.subHeading}
         icon="mdi:jet-engine"
       />
-      <div className="grid grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
         {skills.map((skill) => (
           <div className="group" key={skill.name}>
             <SkillCard

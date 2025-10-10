@@ -4,24 +4,20 @@ import StyledButton from "../buttons/StyledButton";
 import Image from "next/image";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
+type SectionButton = {
+  label: string;
+  href: string;
+  icon: string;
+};
+
 type SectionCardsProps = {
   icon?: string;
   children?: React.ReactNode;
   description?: string;
-  buttons?: Buttons[];
+  buttons?: SectionButton[];
 };
 
-type Buttons = {
-  text: string;
-  link: string;
-  icon: string;
-};
-
-const SectionCards = ({
-  children,
-  description,
-  buttons,
-}: SectionCardsProps) => {
+const SectionCards = ({ children, buttons }: SectionCardsProps) => {
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -45,28 +41,30 @@ const SectionCards = ({
         opacity: springOpacity,
       }}
     >
-      <div className="grid grid-cols-12 place-content-between items-center w-full border  rounded-xl backdrop-blur-md  backdrop-opacity-85 border-stone-50/10 bg-stone-50/5 p-8 ">
+      <div className="grid w-full grid-cols-12 place-content-between items-center rounded-xl border border-stone-50/10 bg-stone-50/5 p-8 backdrop-blur-md backdrop-opacity-85">
         <Image
           alt="avatar ali riz abadian"
           src={"/favicon.png"}
           width={300}
           height={300}
-          className="rounded-full overflow-hidden border-stone-50/10 border col-span-3"
+          className="col-span-12 overflow-hidden rounded-full border border-stone-50/10 md:col-span-4 lg:col-span-3"
         />
-        <div className="col-span-9 flex flex-col items-start justify-evenly gap-y-4">
-          <p className="text-white text-lg  font-tech text-justify leading-relaxed">
+        <div className="col-span-12 flex flex-col items-start justify-evenly gap-y-4 md:col-span-8 lg:col-span-9">
+          <p className="text-justify text-lg font-tech leading-relaxed text-white">
             {children}
           </p>
-          <div className="flex flex-row items-center justify-start gap-x-4">
+          <div className="flex flex-wrap items-center justify-start gap-3">
             {buttons &&
               buttons.length > 0 &&
               buttons.map((button, index) => (
                 <StyledButton
                   key={index}
-                  externalLink={button.link}
+                  externalLink={button.href}
                   staticIcon={button.icon}
+                  className="bg-white/5"
+                  fontSize="small"
                 >
-                  {button.text}
+                  {button.label}
                 </StyledButton>
               ))}
           </div>

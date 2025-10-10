@@ -6,27 +6,37 @@ import LottieLoader from "@/shared/ui/visuals/LottieLoader";
 import { Camera } from "lucide-react";
 import React, { Suspense } from "react";
 
-const HeroSection = () => {
+type HeroSectionProps = {
+  content: {
+    tagline: string;
+    ctaLabel: string;
+    typingSequence: (string | number)[];
+  };
+};
+
+const HeroSection = ({ content }: HeroSectionProps) => {
   return (
     <section
-      className="relative min-h-screen w-full flex flex-col items-center justify-center"
+      className="relative flex min-h-screen w-full flex-col items-center justify-center"
       id="home"
     >
-      <div className="font-pop w-full text-4xl text-white bg-transparent backdrop-blur-sm backdrop-opacity-50 bg-clip-border rounded-lg p-6">
-        <div className="w-full max-w-2xl mx-auto flex flex-col items-start gap-x-4 justify-start space-y-4">
+      <div className="w-full rounded-lg bg-transparent p-6 font-pop text-4xl text-white backdrop-blur-sm backdrop-opacity-50">
+        <div className="mx-auto flex w-full max-w-2xl flex-col items-start justify-start gap-x-4 space-y-4 text-start">
           <div className="flex flex-row items-center gap-x-4">
             <Camera size={48} />
-            <HeroTyping />
+            <HeroTyping sequence={content.typingSequence} />
           </div>
-          <p className="font-tech">
-            Front-end Developer Next.js | React.js | Rust
-          </p>
+          <p className="font-tech">{content.tagline}</p>
           <div className="flex flex-row items-center gap-x-4">
             <Suspense>
-              <PixelButton text="View My Work" size="medium" href="#projects" />
+              <PixelButton
+                text={content.ctaLabel}
+                size="medium"
+                href="#projects"
+              />
             </Suspense>
           </div>
-          <div className="absolute top-0 left-0 w-fit h-full -z-10 bg-transparent text-transparent">
+          <div className="absolute left-0 top-0 -z-10 h-full w-fit bg-transparent text-transparent">
             <LottieLoader />
           </div>
         </div>

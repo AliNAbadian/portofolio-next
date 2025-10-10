@@ -1,7 +1,7 @@
 "use client";
 
 import StyledButton from "@/shared/ui/buttons/StyledButton";
-import { Project } from "../data/projects";
+import type { Project } from "@/shared/i18n/types";
 import { Icon } from "@iconify-icon/react";
 import React from "react";
 

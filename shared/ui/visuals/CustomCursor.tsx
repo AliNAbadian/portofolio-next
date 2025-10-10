@@ -24,7 +24,6 @@ const CustomCursor = () => {
     if (mediaQuery.addEventListener) {
       mediaQuery.addEventListener("change", handleChange);
     } else {
-      // @ts-expect-error - addListener for older browsers
       mediaQuery.addListener(handleChange);
     }
 
@@ -32,7 +31,6 @@ const CustomCursor = () => {
       if (mediaQuery.removeEventListener) {
         mediaQuery.removeEventListener("change", handleChange);
       } else {
-        // @ts-expect-error - removeListener for older browsers
         mediaQuery.removeListener(handleChange);
       }
     };
@@ -69,10 +67,7 @@ const CustomCursor = () => {
   }
 
   return (
-    <div
-      className="pointer-events-none fixed inset-0 z-[9999]"
-      aria-hidden
-    >
+    <div className="pointer-events-none fixed inset-0 z-[9999]" aria-hidden>
       <div
         className="absolute h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/60 transition-all duration-200 ease-out"
         style={{
