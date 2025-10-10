@@ -1,31 +1,29 @@
 "use client";
 import React from "react";
-import MenuButton from "../UI/Buttons/MenuButton";
-import StyledButton from "../UI/Buttons/StyledButton";
-import { text } from "stream/consumers";
 import Image from "next/image";
-import { useScrollTop } from "@/lib/useScrollTop";
+import StyledButton from "@/shared/ui/buttons/StyledButton";
+import { useScrollTop } from "@/shared/lib/useScrollTop";
 
 const menuItems = [
   {
     text: "Home",
     icon: "lucide:route",
-    link: "/",
+    link: "#home",
   },
   {
     text: "Skills",
     icon: "lucide:hand-metal",
-    link: "/about",
+    link: "#skills",
   },
   {
     text: "Projects",
     icon: "lucide:cpu",
-    link: "/projects",
+    link: "#projects",
   },
   {
     text: "Contact",
     icon: "lucide:megaphone",
-    link: "/contact",
+    link: "#contact",
   },
 ];
 
@@ -45,16 +43,20 @@ const Navbar = () => {
         <Image src={"/favicon.png"} alt="" fill />
       </div>
       <div className="flex flex-row items-center justify-start gap-x-4 w-full">
-        {menuItems.map((item) => (
-          <StyledButton
-            key={item.text}
-            staticIcon={item.icon}
-            className="bg-white/5 "
-            fontSize="normal"
-          >
-            {item.text}
-          </StyledButton>
-        ))}
+        {menuItems.map((item) => {
+          const targetId = item.link.replace(/^#/, "");
+          return (
+            <StyledButton
+              key={item.text}
+              staticIcon={item.icon}
+              className="bg-white/5 cursor-pointer"
+              fontSize="normal"
+              idLink={targetId}
+            >
+              {item.text}
+            </StyledButton>
+          );
+        })}
         <StyledButton
           staticIcon="lucide:file-text"
           className="bg-white/5 ml-auto"

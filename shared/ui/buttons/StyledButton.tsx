@@ -1,6 +1,6 @@
 "use client";
 
-import { useLenis } from "@/lib/lenis";
+import { useLenis } from "lenis/react";
 import { Icon } from "@iconify-icon/react";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -46,14 +46,16 @@ const StyledButton = ({
   ...props
 }: StyledButtonProps) => {
   const router = useRouter();
-  const { lenis } = useLenis();
+  const lenis = useLenis();
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (customClick) {
       customClick(e);
     } else if (idLink) {
       const element = document.getElementById(idLink);
-      if (element) lenis?.scrollTo(element.offsetTop - 100);
+      if (element) {
+        lenis?.scrollTo(element, { offset: -100 });
+      }
     } else if (localLink) {
       router.push(localLink);
     }

@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from "react";
-import StyledButton, { StyledButtonProps } from "./Buttons/StyledButton";
+import StyledButton from "../buttons/StyledButton";
 import Image from "next/image";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
@@ -28,8 +28,6 @@ const SectionCards = ({
     target: ref,
     offset: ["start end", "start center"],
   });
-
-  console.log(scrollYProgress);
 
   // Smooth scroll animation
   const y = useTransform(scrollYProgress, [0, 1], [80, 0]);

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Share_Tech, Barlow, Concert_One, Poppins } from "next/font/google";
 import "./globals.css";
-import ParticleComponent from "@/components/UI/ParticleWrapper";
-import Navbar from "@/components/Menus/Navbar";
-import { useLenis } from "@/lib/lenis";
-import ClientWrapper from "@/lib/ClientWrapper";
+import ClientWrapper from "@/shared/lib/ClientWrapper";
+import ParticleComponent from "@/shared/ui/visuals/ParticleWrapper";
+import { Navbar } from "@/features/layout";
 
 const shareTech = Share_Tech({
   variable: "--font-share-tech",
