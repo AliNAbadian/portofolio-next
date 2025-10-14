@@ -21,7 +21,7 @@ const AboutSection = ({ content }: AboutSectionProps) => {
   const highlightedBody = content?.body?.split(HIGHLIGHT_TOKEN);
 
   return (
-    <section id="about" className="space-y-10">
+    <section id="about" className="space-y-10 font-pelak">
       <SectionHeader
         heading={content.heading}
         subHeading={content.subHeading}
@@ -38,7 +38,7 @@ const AboutSection = ({ content }: AboutSectionProps) => {
           <React.Fragment key={index}>
             {segment}
             {index < highlightedBody.length - 1 && (
-              <span className="bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text font-extrabold text-transparent transition duration-300 hover:from-yellow-400 hover:to-red-500">
+              <span className="bg-gradient-to-r font-pelak from-indigo-500 to-blue-500 bg-clip-text font-extrabold text-transparent transition duration-300 hover:from-yellow-400 hover:to-red-500">
                 {content.highlightName}
               </span>
             )}

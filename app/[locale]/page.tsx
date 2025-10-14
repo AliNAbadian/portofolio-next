@@ -19,7 +19,7 @@ export default async function Page({ params }: PageProps) {
   return (
     <>
       <HeroSection content={dictionary.hero} />
-      <main className="space-y-20 py-20">
+      <main className="space-y-20 py-20 font-pelak">
         <AboutSection content={dictionary.about} />
         <SkillsSection content={dictionary.skills} />
         <ProjectsSection content={dictionary.projects} />

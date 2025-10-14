@@ -10,7 +10,7 @@ type HeroTypingProps = {
 const HeroTyping = ({ sequence }: HeroTypingProps) => {
   return (
     <TypeAnimation
-      className="flex w-full flex-row items-center justify-center font-tech text-6xl font-bold"
+      className="flex w-full flex-row items-center justify-center text-6xl font-bold font-pelak"
       preRenderFirstString
       style={{ textAlign: "center", width: "fit-content" }}
       speed={5}
