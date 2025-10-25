@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Share_Tech, Barlow, Concert_One, Poppins } from "next/font/google";
+import { Share_Tech } from "next/font/google";
 import "../globals.css";
 import ClientWrapper from "@/shared/lib/ClientWrapper";
 import ParticleComponent from "@/shared/ui/visuals/ParticleWrapper";
@@ -15,27 +15,6 @@ const shareTech = Share_Tech({
   display: "swap",
   weight: "400",
 });
-
-// const poppins = Poppins({
-//   variable: "--font-poppins",
-//   subsets: ["latin"],
-//   display: "swap",
-//   weight: "400",
-// });
-
-// const barlow = Barlow({
-//   variable: "--font-barlow",
-//   subsets: ["latin"],
-//   display: "swap",
-//   weight: "400",
-// });
-
-// const concertOne = Concert_One({
-//   variable: "--font-concert-one",
-//   subsets: ["latin"],
-//   display: "swap",
-//   weight: "400",
-// });
 
 const pelak = localFont({
   src: [
@@ -80,18 +59,17 @@ const pelak = localFont({
       style: "normal",
     },
   ],
-  variable: "--font-pelak", // Optional: makes it easier to use in Tailwind
+  variable: "--font-pelak",
   display: "swap",
 });
 
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const locale = (await isLocale(params.locale))
-    ? (await params.locale) || "fa"
-    : defaultLocale;
+  const { locale: localeFromParams } = await params; // Resolve the Promise
+  const locale = isLocale(localeFromParams) ? localeFromParams : defaultLocale;
   const dictionary = await getDictionary(locale);
 
   return {
@@ -108,14 +86,13 @@ export async function generateMetadata({
 
 type LayoutProps = {
   children: React.ReactNode;
-  params: {
-    locale: string;
-  };
+  params: Promise<{ locale: string }>;
 };
 
 export default async function LocaleLayout({ children, params }: LayoutProps) {
+  const { locale: localeFromParams } = await params; // Resolve the Promise
   const locale = (
-    isLocale(params.locale) ? params.locale : null
+    isLocale(localeFromParams) ? localeFromParams : null
   ) as Locale | null;
 
   if (!locale) {
@@ -135,9 +112,6 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   const isPersianLocale = locale === "fa";
   const fontClasses = [
     shareTech.variable,
-    // barlow.variable,
-    // concertOne.variable,
-    // poppins.variable,
     pelak.variable,
     isPersianLocale ? pelak.className : "",
   ].join(" ");

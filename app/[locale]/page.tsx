@@ -6,15 +6,29 @@ import { SkillsSection } from "@/features/skills";
 import { getDictionary } from "@/shared/i18n/get-dictionary";
 import { locales, type Locale } from "@/shared/i18n/config";
 import React from "react";
+import type { Metadata } from "next";
 
 type PageProps = {
-  params: {
-    locale: Locale;
-  };
+  params: Promise<{ locale: Locale }>;
 };
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params; // Resolve the Promise
+  const dictionary = await getDictionary(locale);
+
+  return {
+    title: dictionary.meta.title,
+    description: dictionary.meta.description,
+  };
+}
+
 export default async function Page({ params }: PageProps) {
-  const dictionary = await getDictionary(params.locale);
+  const { locale } = await params; // Resolve the Promise
+  const dictionary = await getDictionary(locale);
 
   return (
     <>

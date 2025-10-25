@@ -3,20 +3,22 @@ import React, { useRef } from "react";
 import { Icon } from "@iconify-icon/react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
+export type Colors =
+  | "blue"
+  | "red"
+  | "purple"
+  | "green"
+  | "yellow"
+  | "pink"
+  | "indigo"
+  | "orange"
+  | "teal"
+  | "gray";
+
 type SkillCardProps = {
   name: string;
   icon: string;
-  color:
-    | "blue"
-    | "red"
-    | "purple"
-    | "green"
-    | "yellow"
-    | "pink"
-    | "indigo"
-    | "orange"
-    | "teal"
-    | "gray";
+  color: Colors;
 };
 
 const SkillCard = ({ name, icon, color = "blue" }: SkillCardProps) => {

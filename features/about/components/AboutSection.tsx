@@ -29,8 +29,8 @@ const AboutSection = ({ content }: AboutSectionProps) => {
       />
       <SectionCards
         buttons={content.buttons.map((button) => ({
-          text: button.label,
-          link: button.href,
+          label: button.label,
+          href: button.href,
           icon: button.icon,
         }))}
       >

@@ -1,4 +1,10 @@
-export const skills = [
+import { Colors } from "@/shared/ui/cards/SkillCard";
+
+export const skills: {
+  icon: string;
+  name: string;
+  color: Colors;
+}[] = [
   { icon: "cib:react", name: "React", color: "blue" },
   { icon: "flowbite:tailwind-solid", name: "Tailwind CSS", color: "teal" },
   { icon: "cib:next-js", name: "Next.js", color: "gray" },
