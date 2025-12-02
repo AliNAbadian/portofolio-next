@@ -4,6 +4,7 @@ import PixelButton from "@/shared/ui/buttons/PixelButton";
 import HeroTyping from "@/shared/ui/text/HeroTyping";
 import LottieLoader from "@/shared/ui/visuals/LottieLoader";
 import { Camera } from "lucide-react";
+import { useParams } from "next/navigation";
 import React, { Suspense } from "react";
 
 type HeroSectionProps = {
@@ -15,6 +16,9 @@ type HeroSectionProps = {
 };
 
 const HeroSection = ({ content }: HeroSectionProps) => {
+  const { locale } = useParams();
+
+  const isPersianLocale = locale === "fa";
   return (
     <section
       className="relative flex min-h-screen w-full flex-col items-start justify-center px-4 pb-20 md:pb-0"
@@ -38,7 +42,11 @@ const HeroSection = ({ content }: HeroSectionProps) => {
               />
             </Suspense>
           </div>
-          <div className="absolute left-0 top-0 -z-10 h-full w-fit bg-transparent text-transparent">
+          <div
+            className={`absolute  top-0 -z-10 h-full w-fit bg-transparent text-transparent ${
+              isPersianLocale ? "rotate-180 left-0" : " right-0"
+            }`}
+          >
             <LottieLoader />
           </div>
         </div>
