@@ -21,16 +21,18 @@ const Footer = ({ content }: FooterProps) => {
     .replace("{{owner}}", content.owner);
 
   return (
-    <footer className="relative mt-20 border-t border-white/10 bg-stone-950/40 backdrop-blur-md">
-      <div className="mx-auto flex w-full max-w-screen-xl flex-col gap-8 px-6 py-12 md:flex-row md:items-center md:justify-between">
-        <div className="space-y-3">
-          <p className="text-xs font-medium uppercase tracking-[0.3em] text-white/60">
+    <footer className="relative mt-20 border-t border-white/10 bg-stone-950/40 backdrop-blur-md pb-20 md:pb-0">
+      <div className="mx-auto flex w-full max-w-screen-xl flex-col gap-6 md:gap-8 px-4 md:px-6 py-8 md:py-12 md:flex-row md:items-center md:justify-between">
+        <div className="space-y-2 md:space-y-3">
+          <p className="text-[10px] md:text-xs font-medium uppercase tracking-[0.2em] md:tracking-[0.3em] text-white/60">
             {content.owner}
           </p>
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="text-xl md:text-2xl font-semibold text-white">
             {content.headline}
           </h2>
-          <p className="text-sm text-white/60">{content.description}</p>
+          <p className="text-xs md:text-sm text-white/60">
+            {content.description}
+          </p>
         </div>
         <div className="flex flex-wrap gap-3">
           {content.links.map((link) => (
@@ -46,7 +48,7 @@ const Footer = ({ content }: FooterProps) => {
           ))}
         </div>
       </div>
-      <div className="border-t border-white/10 py-4 text-center text-xs text-white/50">
+      <div className="border-t border-white/10 py-3 md:py-4 text-center text-[10px] md:text-xs text-white/50 px-4">
         {footerNote}
       </div>
     </footer>

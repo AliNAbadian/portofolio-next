@@ -20,9 +20,12 @@ const SkillsSection = ({ content }: SkillsSectionProps) => {
         subHeading={content.subHeading}
         icon="mdi:jet-engine"
       />
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
+      <div className="grid grid-cols-12 gap-4 ">
         {skills.map((skill) => (
-          <div className="group" key={skill.name}>
+          <div
+            className="group col-span-12 md:col-span-6 lg:col-span-3"
+            key={skill.name}
+          >
             <SkillCard
               name={skill.name}
               icon={skill.icon}

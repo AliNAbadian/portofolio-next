@@ -4,7 +4,7 @@ import { Share_Tech } from "next/font/google";
 import "../globals.css";
 import ClientWrapper from "@/shared/lib/ClientWrapper";
 import ParticleComponent from "@/shared/ui/visuals/ParticleWrapper";
-import { Footer, Navbar } from "@/features/layout";
+import { Footer, Navbar, BottomNavbar } from "@/features/layout";
 import { getDictionary } from "@/shared/i18n/get-dictionary";
 import { defaultLocale, isLocale, type Locale } from "@/shared/i18n/config";
 import localFont from "next/font/local";
@@ -120,7 +120,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
     <>
       <html lang={locale || defaultLocale} dir={direction}>
         <body
-          className={`${fontClasses} container mx-auto antialiased`}
+          className={`${fontClasses} lg:container w-full mx-auto antialiased`}
           data-locale={locale}
         >
           <ClientWrapper>
@@ -129,6 +129,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
               resumeLabel={dictionary.navbar.resumeLabel}
               localeSwitcher={localeSwitcher}
             />
+            <BottomNavbar menuItems={dictionary.navbar.menuItems} />
             {children}
             <Footer content={dictionary.footer} />
           </ClientWrapper>

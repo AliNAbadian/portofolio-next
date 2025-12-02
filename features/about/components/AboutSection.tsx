@@ -21,7 +21,7 @@ const AboutSection = ({ content }: AboutSectionProps) => {
   const highlightedBody = content?.body?.split(HIGHLIGHT_TOKEN);
 
   return (
-    <section id="about" className="space-y-10 font-pelak">
+    <section id="about" className="space-y-6 md:space-y-10 font-pelak">
       <SectionHeader
         heading={content.heading}
         subHeading={content.subHeading}

@@ -41,16 +41,16 @@ const SectionCards = ({ children, buttons }: SectionCardsProps) => {
         opacity: springOpacity,
       }}
     >
-      <div className="grid w-full grid-cols-12 place-content-between items-center rounded-xl border border-stone-50/10 bg-stone-50/5 p-8 backdrop-blur-md backdrop-opacity-85">
+      <div className="grid w-full grid-cols-12 place-content-between items-center rounded-xl border border-stone-50/10 bg-stone-50/5 p-4 md:p-8 backdrop-blur-md backdrop-opacity-85">
         <Image
           alt="avatar ali riz abadian"
           src={"/favicon.png"}
           width={300}
           height={300}
-          className="col-span-12 overflow-hidden rounded-full border border-stone-50/10 md:col-span-4 lg:col-span-3"
+          className="col-span-12 mx-auto mb-4 overflow-hidden rounded-full border border-stone-50/10 md:col-span-4 md:mx-0 md:mb-0 lg:col-span-3"
         />
-        <div className="col-span-12 flex flex-col items-start justify-evenly gap-y-4 md:col-span-8 lg:col-span-9">
-          <p className="text-justify text-lg font-tech leading-relaxed text-white">
+        <div className="col-span-12 flex flex-col items-start justify-evenly gap-y-3 md:gap-y-4 md:col-span-8 lg:col-span-9">
+          <p className="text-justify text-sm  lg:text-lg font-tech leading-relaxed text-white">
             {children}
           </p>
           <div className="flex flex-wrap items-center justify-start gap-3">

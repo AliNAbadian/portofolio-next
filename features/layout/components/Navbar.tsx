@@ -20,7 +20,7 @@ const Navbar = ({ menuItems, resumeLabel, localeSwitcher }: NavbarProps) => {
   const isScrolled = scrollTop > 0;
   return (
     <div
-      className={`fixed inset-0 z-50 flex h-16 flex-row items-center justify-start gap-x-4 border px-4 backdrop-blur-md transition-all duration-300 ease-in-out ${
+      className={`fixed inset-0 z-50 hidden md:flex h-16 flex-row items-center justify-start gap-x-4 border px-4 backdrop-blur-md transition-all duration-300 ease-in-out ${
         isScrolled
           ? "left-[15%] right-[15%] top-2 border-stone-50/10 bg-stone-50/5"
           : "left-[10%] right-[10%] top-0 bg-transparent border-none"

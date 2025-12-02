@@ -17,16 +17,16 @@ const PixelButton = ({
 }: GlowButtonProps) => {
   const sizeClasses = {
     small: "w-[80px] h-[40px] text-sm",
-    medium: "w-[100px] h-[50px] text-base",
+    medium: "w-[120px] h-[50px] text-base",
     large: "w-[160px] h-[80px] text-lg",
   };
 
   return (
     <Link
-      className={`group font-barlow cursor-pointer relative bg-[linear-gradient(144deg,_#af40ff,_#5b42f3_50%,_#00ddeb)] text-white whitespace-nowrap flex flex-wrap rounded-lg overflow-hidden ${sizeClasses[size]}`}
+      className={`group font-barlow cursor-pointer  relative bg-[linear-gradient(144deg,_#af40ff,_#5b42f3_50%,_#00ddeb)] text-white whitespace-nowrap flex flex-wrap rounded-lg overflow-hidden ${sizeClasses[size]}`}
       href={href}
     >
-      <span className="absolute text-sm left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
+      <span className="absolute text-sm left-1/2  top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
         {text}
       </span>
       <div className="w-[10px] h-[10px] blur-[5px] bg-[rgb(30,41,59)] delay-[0.2s] duration-[0.4s] hover:bg-transparent hover:delay-0 hover:duration-0 group-focus:bg-transparent group-focus:delay-[0.5s]"></div>

@@ -33,7 +33,7 @@ export default async function Page({ params }: PageProps) {
   return (
     <>
       <HeroSection content={dictionary.hero} />
-      <main className="space-y-20 py-20 font-pelak">
+      <main className="space-y-12 md:space-y-20 py-12 md:py-20 font-pelak px-4 md:px-6 w-full">
         <AboutSection content={dictionary.about} />
         <SkillsSection content={dictionary.skills} />
         <ProjectsSection content={dictionary.projects} />

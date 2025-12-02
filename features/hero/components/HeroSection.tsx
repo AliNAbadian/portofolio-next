@@ -17,16 +17,18 @@ type HeroSectionProps = {
 const HeroSection = ({ content }: HeroSectionProps) => {
   return (
     <section
-      className="relative flex min-h-screen w-full flex-col items-center justify-center"
+      className="relative flex min-h-screen w-full flex-col items-start justify-center px-4 pb-20 md:pb-0"
       id="home"
     >
-      <div className="w-full rounded-lg bg-transparent p-6 font-pop text-4xl text-white backdrop-blur-sm backdrop-opacity-50">
-        <div className="mx-auto flex w-full max-w-2xl flex-col items-start justify-start gap-x-4 space-y-4 text-start">
-          <div className="flex flex-row items-center gap-x-4">
-            <Camera size={48} />
+      <div className="w-full rounded-lg bg-transparent p-4 md:p-6 font-pop text-2xl md:text-4xl text-white backdrop-blur-sm backdrop-opacity-50">
+        <div className="flex w-full max-w-2xl flex-col items-start justify-start gap-x-4 space-y-4 text-start">
+          <div className="flex flex-row items-center gap-x-2 md:gap-x-4">
+            <Camera size={32} className="md:w-12 md:h-12" />
             <HeroTyping sequence={content.typingSequence} />
           </div>
-          <p className="font-tech">{content.tagline}</p>
+          <p className="font-tech text-purple-300 md:text-lg lg:text-xl">
+            {content.tagline}
+          </p>
           <div className="flex flex-row items-center gap-x-4">
             <Suspense>
               <PixelButton
