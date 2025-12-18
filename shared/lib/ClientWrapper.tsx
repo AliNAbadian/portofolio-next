@@ -8,7 +8,7 @@ const ClientWrapper = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <ReactLenis root>{children}</ReactLenis>
-      <CustomCursor />
+      {/* <CustomCursor /> */}
     </>
   );
 };

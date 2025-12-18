@@ -17,8 +17,7 @@ export function middleware(request: NextRequest) {
   }
 
   const hasLocale = locales.some(
-    (locale) =>
-      pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
+    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
   );
 
   if (hasLocale) {
@@ -26,9 +25,7 @@ export function middleware(request: NextRequest) {
   }
 
   const redirectURL = request.nextUrl.clone();
-  redirectURL.pathname = `/${defaultLocale}${
-    pathname === "/" ? "" : pathname
-  }`;
+  redirectURL.pathname = `/${defaultLocale}${pathname === "/" ? "" : pathname}`;
 
   return NextResponse.redirect(redirectURL);
 }

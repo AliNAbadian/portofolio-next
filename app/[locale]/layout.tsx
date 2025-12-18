@@ -24,7 +24,7 @@ const pelak = localFont({
       style: "normal",
     },
     {
-      path: "../../public/fonts/Pelak-Light.ttf",
+      path: "../../public/fonts/Pelak-light.ttf",
       weight: "300",
       style: "normal",
     },
@@ -120,7 +120,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
     <>
       <html lang={locale || defaultLocale} dir={direction}>
         <body
-          className={`${fontClasses} container mx-auto antialiased`}
+          className={`${fontClasses} container mx-auto antialiased cursor-none`}
           data-locale={locale}
         >
           <ClientWrapper>
